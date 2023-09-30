@@ -1,0 +1,8 @@
+<div class="todo" [ngClass]="{ 'done': todo.status }">
+    <div class="id">{{ index }}</div>
+    <div class="title">{{ todo.title }}</div>
+    <div class="due-date">{{ todo.dueDate | date:'medium' }}</div>
+    <div class="description">{{ todo.description }}</div>
+    <input type="checkbox" [checked]="todo.status" (change)="toggleStatus($event)">
+    <button class="delete" (click)="deleteTodo()">Remove</button>
+</div>
